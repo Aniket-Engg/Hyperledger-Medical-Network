@@ -1,0 +1,20 @@
+#%RAML 1.0 DataType
+---
+properties:
+  status:
+    type: string
+    required: true
+    description: The value will be **success** or **failure**
+  code:
+    type: integer
+    required: true
+    minimum: 200
+    maximum: 599
+    description: the server response code
+  message:
+    type: string
+    required: true
+    description: the server response message
+  data:
+    type: object
+    required: false

@@ -1,0 +1,43 @@
+/**
+ * Sample business network definition.
+ */
+namespace org.acme.sample
+
+asset SampleAsset identified by assetId {
+  o String assetId
+  --> person owner
+  o String value
+}
+
+participant SampleParticipant identified by participantId {
+  o String participantId
+  o String firstName
+  o String lastName
+}
+
+participant person identified by participantId {
+  o String participantId
+  o String firstName
+  o String lastName
+}
+
+participant Doctor extends person{
+  o String department
+  o String salary
+}
+
+participant Patient extends person{
+  o DateTime lastvisit
+  o Double balanceDue
+}
+
+transaction SampleTransaction {
+  --> SampleAsset asset
+  o String newValue
+}
+
+event SampleEvent {
+  --> SampleAsset asset
+  o String oldValue
+  o String newValue
+}

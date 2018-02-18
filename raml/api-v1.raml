@@ -1,0 +1,136 @@
+#%RAML 1.0
+title: Test APIs
+version: v1
+baseUri: /api/{version}
+mediaType: application/json
+
+/test:
+  description: This is a testing API
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            type: object
+            properties:
+                message: string
+
+/networkinfo:
+    description: To get info of network
+    get:
+      responses:
+          201:
+            body:
+              application/json:
+                type: !include dataTypes/response.raml
+          500:
+            body:
+              application/json:
+                type: !include dataTypes/response.raml
+
+/cardinfo:
+    description: To get info of a card from file store
+    post:
+      body:
+        application/json:
+        application/x-www-form-urlencoded:
+          properties:
+            card: 
+              description: This should be the card name 
+              required: true
+              type: string
+            network: 
+              description: This should be the network name 
+              required: true
+              type: string
+      responses:
+          201:
+            body:
+              application/json:
+                type: !include dataTypes/response.raml
+          500:
+            body:
+              application/json:
+                type: !include dataTypes/response.raml
+
+/signup:
+    description: To signup
+    post:
+      body:
+        application/json:
+        application/x-www-form-urlencoded:
+          properties:
+            email: 
+              description: This should be the email of user 
+              required: true
+              type: string
+            password: 
+              description: This should be the password of user 
+              required: true
+              type: string
+            firstName: 
+              description: This should be the firstName of user 
+              required: true
+              type: string
+            lastName: 
+              description: This should be the lastName of user 
+              required: true
+              type: string
+            role: 
+              description: This should be the role of user 
+              required: true
+              type: string
+            networkName: 
+              description: This should be the networkName of user 
+              required: true
+              type: string
+            department: 
+              description: This should be the department of user 
+              required: false
+              type: string
+            salary: 
+              description: This should be the salary of user 
+              required: false
+              type: string
+            lastvisit: 
+              description: This should be the lastvisit of user 
+              required: false
+              type: string
+            balanceDue: 
+              description: This should be the balanceDue of user 
+              required: false
+              type: string
+      responses:
+          201:
+            body:
+              application/json:
+                type: !include dataTypes/response.raml
+          500:
+            body:
+              application/json:
+                type: !include dataTypes/response.raml
+
+/login:
+    description: To login
+    post:
+      body:
+        application/json:
+        application/x-www-form-urlencoded:
+          properties:
+            email: 
+              description: This should be the email of user 
+              required: true
+              type: string
+            password: 
+              description: This should be the password of user
+              required: true
+              type: string
+      responses:
+          201:
+            body:
+              application/json:
+                type: !include dataTypes/response.raml
+          500:
+            body:
+              application/json:
+                type: !include dataTypes/response.raml

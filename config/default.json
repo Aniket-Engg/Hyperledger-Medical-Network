@@ -1,0 +1,31 @@
+
+{
+
+"development" : {
+    "hlfVersion"  : 1,
+    "port"        : 5000,
+    "ramlPath"    : "raml/api-v1.raml",
+    "apiSuffix"   : "/api/v1",
+    "cardName"    : "admin@my-network",
+    "database"    : "mongodb://127.0.0.1:27017/medblock", 
+    "connectionProfile" : {
+                "type"      : "hlfv1",
+                "orderers"  : [
+                                "grpc://localhost:7050"
+                            ],
+                "ca"        : {
+                                "url": "http://localhost:7054",
+                                "name": "ca.org1.example.com"
+                            },
+                "peers"     : [
+                                {
+                                    "requestURL": "grpc://localhost:7051",
+                                    "eventURL" : "grpc://localhost:7053"
+                                }
+                            ],
+                "channel"   : "composerchannel",
+                "mspID"     : "Org1MSP",
+                "timeout"   : "300"
+                }
+    }
+}
