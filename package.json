@@ -1,5 +1,5 @@
 {
-  "name": "Hyperledger Medical Network",
+  "name": "hyperledger_medical_network",
   "version": "1.0.0",
   "description": "Sample Hyperledger Composer Project",
   "main": "server.js",
