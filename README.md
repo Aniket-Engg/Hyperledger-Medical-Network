@@ -1,10 +1,10 @@
 # Hyperledger-Medical-Network
-This is a Hyperledger Composer based sample project which is developed considering a medical use case.
+This is a [Hyperledger Composer](https://hyperledger.github.io/composer/latest/) based sample project which is developed considering a medical use case.
 
 ## Getting Started
 These instructions will get you the project up and running for development and testing purposes.
 
-Make sure you have [Node.js](https://nodejs.org/en/download/) installed on your machine.
+Make sure you have [Node.js](https://nodejs.org/en/download/) and [MongoDB](https://www.mongodb.com/) installed on your machine.
 
 After that follow [this](https://hyperledger.github.io/composer/latest/installing/development-tools.html) guide to setup the environment.
 
@@ -18,7 +18,8 @@ $ composer card import --file networkadmin.card
 ```
 Now, to run the project
 ```
-$ cd project-folder
+$ git clone https://github.com/Aniket-Engg/Hyperledger-Medical-Network
+$ cd Hyperledger-Medical-Network
 $ npm install
 $ npm start
 ```
