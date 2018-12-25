@@ -6,7 +6,7 @@ These instructions will get you the project up and running for development and t
 
 Make sure you have [Node.js](https://nodejs.org/en/download/) installed on your machine.
 
-After that follow [this](https://hyperledger.github.io/composer/installing/development-tools.html) guide to setup the environment.
+After that follow [this](https://hyperledger.github.io/composer/latest/installing/development-tools.html) guide to setup the environment.
 
 ## Build and Install
 To run the server, first deploy the business network, make sure fabric is running:
